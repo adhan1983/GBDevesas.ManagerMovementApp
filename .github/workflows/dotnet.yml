@@ -47,6 +47,8 @@ jobs:
           /d:sonar.host.url="https://sonarcloud.io"
           /d:sonar.token="${{ secrets.SONAR_TOKEN }}"
           /d:sonar.cs.opencover.reportsPaths="**/coverage.opencover.xml"
+          /d:sonar.scanner.skipJreProvisioning=true
+          /d:sonar.exclusions="**/Migrations/**,**/wwwroot/lib/**,**/*.Designer.cs"
       
       - name: Restore
         run: dotnet restore
