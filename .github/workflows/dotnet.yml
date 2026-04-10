@@ -25,8 +25,7 @@ jobs:
       run: dotnet build --no-restore --configuration Release
       
     - name: Test
-      run: dotnet test --no-build --verbosity normal --configuration Release
-      continue-on-error: true # remove essa linha se você já tiver testes
+      run: dotnet test --no-build --verbosity normal --configuration Release      
       
     - name: Publish
       run: dotnet publish ./AppBlazor/AppBlazor.csproj -c Release -o release
